@@ -1,0 +1,29 @@
+** Install Chocolatey **
+Website: https://chocolatey.org/
+Code from CMD: (Run as Administrator)
+ @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+Code from Powershell: (Run as Administrator)
+iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+
+** Install Git **
+Install from Powershell: (Run as Administrator)
+cinst poshgit
+
+** Set-up Windows Powershell Execution Policy (New machines) **
+set-executionpolicy remotesigned
+** Restart PS for changes to take effect **
+
+** Git Configuration Settings **
+git config --global user.name "user name"
+git config --global user.email "name@email.com"
+git config --global core.editor notepad++.exe
+
+** Windows Credentials (Windows ONLY)**
+cinst git-credential-winstore
+
+** Git command to comply w/ upcoming version 2.0 **
+git config --global push.default simple
+
+** Needed to modify push command to commit to REMOTE **
+git config --global push.default simple
+
